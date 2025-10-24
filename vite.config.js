@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
   },
-  base: '/',
+  base: '/portfolio',
   server: {
     port: 3000,
   },
