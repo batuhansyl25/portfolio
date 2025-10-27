@@ -77,6 +77,16 @@
   color: #9ca3af;
 }
 
+a {
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #6366f1;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact {

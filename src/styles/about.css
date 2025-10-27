@@ -30,17 +30,35 @@
 
 .tech-stack h3 {
   font-size: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   color: #1a1a1a;
+}
+
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-category {
+  text-align: left;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.5rem;
 }
 
 .tech-items {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  justify-content: center;
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .tech-item {
@@ -73,6 +91,14 @@
   }
   
   .about-text p {
+    font-size: 1rem;
+  }
+  
+  .tech-categories {
+    gap: 1rem;
+  }
+  
+  .category-title {
     font-size: 1rem;
   }
   

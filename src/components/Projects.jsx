@@ -9,27 +9,27 @@ const Projects = () => {
 
   const highlights = [
     {
-      title: "OpenGPU Core Backend",
-      subtitle: "Go • Redis • Docker • CI/CD",
-      challenge: "Designing the compute orchestration layer for OpenGPU, handling job scheduling, distributed processing, and state management.",
-      solution: "Built a distributed queue system using Redis Streams and Go worker pools, implementing connection pooling and circuit breakers for high availability.",
-      results: "Reduced latency by 85% and achieved 10K+ ops/sec throughput.",
-      stack: ["Go", "Redis", "Docker", "CI/CD"]
+      emoji: "🧮",
+      title: "Secure Compute & Transaction Backend",
+      subtitle: "Go • Redis • Docker • Web3",
+      description: "Built a distributed backend capable of processing 10K+ secure transactions per second with real-time signing and verification.",
+      results: "→ Achieved 85% latency reduction, zero memory leaks, and stable throughput across multi-node clusters.",
+      stack: ["Go", "Redis", "Docker", "Web3"]
     },
     {
-      title: "Full-Stack Web3 Infrastructure",
-      subtitle: "React • NestJS • Ethers.js • Next.js",
-      challenge: "Creating reusable SDKs and UI components for wallet connection, contract read/write, and real-time blockchain event listeners.",
-      solution: "Built comprehensive React component library with Next.js, integrating Web3.js and Ethers.js for multi-chain support with custom hooks for state management.",
-      results: "Accelerated dApp development by 70%, simplified multi-chain integration.",
-      stack: ["React", "NestJS", "Ethers.js", "Next.js"]
+      emoji: "💳",
+      title: "Smart Contract & Tokenization API",
+      subtitle: "Solidity • NestJS • Ethers.js",
+      description: "Developed APIs for asset tokenization and decentralized custody systems.",
+      results: "→ Supported ERC-20 / ERC-721 smart contracts with real-time metadata syncing and off-chain validation.",
+      stack: ["Solidity", "NestJS", "Ethers.js"]
     },
     {
-      title: "CI/CD Deployment Automation",
+      emoji: "⚙️",
+      title: "Continuous Integration & Secure Deployment",
       subtitle: "Docker • GitHub Actions • Linux",
-      challenge: "Building standardized pipelines for building, testing, and deploying Go + Node.js microservices.",
-      solution: "Created Docker-based deployment templates with GitHub Actions, implementing blue-green deployments, automated testing, and monitoring integration.",
-      results: "Reduced deployment time from 12 min → 3 min, increased reliability across environments.",
+      description: "Implemented end-to-end CI/CD pipelines with image verification, rollback, and automated secrets management.",
+      results: "→ Reduced deployment errors by 70%, increased overall uptime and system security.",
       stack: ["Docker", "GitHub Actions", "Linux"]
     }
   ];
@@ -56,25 +56,17 @@ const Projects = () => {
                 transition={{ delay: index * 0.2, duration: 0.8 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="project-number">{index + 1}️⃣</div>
-                <h3 className="project-title">{highlight.title}</h3>
-                <h4 className="project-subtitle">{highlight.subtitle}</h4>
+                <div className="project-header">
+                  {/* <div className="project-emoji">{highlight.emoji}</div> */}
+                  <div className="project-info">
+                    <h3 className="project-title">{highlight.title}</h3>
+                    <h4 className="project-subtitle">{highlight.subtitle}</h4>
+                  </div>
+                </div>
                 
-                <div className="case-study">
-                  <div className="case-section">
-                    <h5 className="case-label">Challenge</h5>
-                    <p className="case-text">{highlight.challenge}</p>
-                  </div>
-                  
-                  <div className="case-section">
-                    <h5 className="case-label">Solution</h5>
-                    <p className="case-text">{highlight.solution}</p>
-                  </div>
-                  
-                  <div className="case-section">
-                    <h5 className="case-label">Results</h5>
-                    <p className="case-text results-text">{highlight.results}</p>
-                  </div>
+                <div className="project-content">
+                  <p className="project-description">{highlight.description}</p>
+                  <p className="project-results">{highlight.results}</p>
                 </div>
                 
                 <div className="project-stack">

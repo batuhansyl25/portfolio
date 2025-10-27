@@ -1,17 +1,18 @@
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import '../styles/hero.css';
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import "../styles/hero.css";
 
 const Hero = () => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
-  
-  const fullText = "Full-Stack Engineer specialized in Go, Web3, and Distributed Systems.";
-  
+
+  const fullText =
+    "Full-Stack Engineer specialized in Go, Web3, and Distributed Systems.";
+
   useEffect(() => {
     // Reset animation when component mounts
-    setDisplayedText('');
+    setDisplayedText("");
     setCurrentIndex(0);
     setShowCursor(true);
   }, []);
@@ -19,28 +20,28 @@ const Hero = () => {
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timeout = setTimeout(() => {
-        setDisplayedText(prev => prev + fullText[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
+        setDisplayedText((prev) => prev + fullText[currentIndex]);
+        setCurrentIndex((prev) => prev + 1);
       }, 50); // Adjust speed here (lower = faster)
-      
+
       return () => clearTimeout(timeout);
     } else {
       // Start cursor blinking after typing is complete
       const cursorInterval = setInterval(() => {
-        setShowCursor(prev => !prev);
+        setShowCursor((prev) => !prev);
       }, 500);
-      
+
       return () => clearInterval(cursorInterval);
     }
   }, [currentIndex, fullText]);
 
   const scrollToProjects = () => {
-    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
   };
 
   const downloadCV = () => {
     // In a real implementation, this would download a PDF
-    alert('CV download functionality would be implemented here');
+    alert("CV download functionality would be implemented here");
   };
 
   return (
@@ -60,28 +61,37 @@ const Hero = () => {
           >
             <span className="typing-text">
               {displayedText}
-              <span className={`cursor ${showCursor ? 'visible' : 'hidden'}`}>|</span>
+              <span className={`cursor ${showCursor ? "visible" : "hidden"}`}>
+                |
+              </span>
             </span>
           </motion.h1>
-          
+
           <motion.p
             className="hero-subhead"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            I build fast, reliable backends in Go with Redis and NestJS, design modern frontends with React and Next.js, and deliver production-ready systems powered by Docker and CI/CD pipelines.
+            Blockchain & Full-Stack Engineer specialized in Go, Web3, and Secure
+            Financial Systems. I build high-performance blockchain backends with
+            Go, develop secure smart contract APIs with NestJS and Solidity, and
+            design production-grade distributed systems using Docker, Redis, and
+            CI/CD pipelines. Focused on crypto infrastructure, digital asset
+            custody, and tokenization solutions aligned with enterprise-grade
+            security standards.
           </motion.p>
-          
+
           <motion.p
             className="hero-tagline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            Clean architecture, strong performance, and a focus on scalable real-world systems.
+            Clean architecture, strong performance, and a focus on scalable
+            real-world systems.
           </motion.p>
-          
+
           <motion.div
             className="hero-buttons"
             initial={{ opacity: 0, y: 20 }}

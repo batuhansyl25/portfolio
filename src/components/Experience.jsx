@@ -13,13 +13,13 @@ const Experience = () => {
       position: "Full Stack Engineer",
       period: "2024 – Present",
       techStack: "Distributed Systems, Go + Next.js + Redis",
-      description: "At OpenGPU, I design and maintain the project's backend services in Go, focusing on high-performance compute workloads and distributed reliability. I also handle frontend integrations using Next.js and NestJS, ensuring the entire stack communicates efficiently and securely.",
+      description: "At OpenGPU, I designed the backend architecture for a distributed Web3 compute network, combining blockchain processing, real-time task orchestration, and secure key management.",
       achievements: [
-        "Developed the core compute orchestration layer in Go, enabling multi-node task distribution.",
-        "Designed real-time queues and caching logic with Redis Streams.",
-        "Built internal CI/CD pipelines with GitHub Actions for zero-downtime releases.",
-        "Integrated frontend dashboards and admin panels with Next.js + REST APIs.",
-        "Reduced average task latency by 85%, improved throughput to 10,000+ jobs/second."
+        "Developed transaction queue systems with Go + Redis Streams, ensuring low-latency and concurrency safety.",
+        "Integrated Ethereum smart contract modules for on-chain compute validation.",
+        "Built secure REST & WebSocket APIs for cross-chain event handling.",
+        "Designed cryptographic signing workflows compatible with hardware wallets.",
+        "Automated deployments using Docker, GitHub Actions, and Linux CI/CD pipelines."
       ]
     },
     {
@@ -36,18 +36,18 @@ const Experience = () => {
         "Improved UX flow for on-chain operations by reducing failed transactions by 40%."
       ]
     },
-    {
-      company: "Freelance & Side Projects",
-      position: "Full Stack Engineer",
-      period: "2020 – 2022",
-      techStack: "API Development, System Design",
-      description: "Developed various SaaS and blockchain tools combining frontend React dashboards and backend automation.",
-      achievements: [
-        "Built monitoring and logging tools using NestJS + MongoDB.",
-        "Created UI kits in React and TypeScript for client dashboards.",
-        "Automated CI/CD pipelines and testing flows for multiple clients."
-      ]
-    }
+    // {
+    //   company: "Freelance & Side Projects",
+    //   position: "Full Stack Engineer",
+    //   period: "2020 – 2022",
+    //   techStack: "API Development, System Design",
+    //   description: "Developed various SaaS and blockchain tools combining frontend React dashboards and backend automation.",
+    //   achievements: [
+    //     "Built monitoring and logging tools using NestJS + MongoDB.",
+    //     "Created UI kits in React and TypeScript for client dashboards.",
+    //     "Automated CI/CD pipelines and testing flows for multiple clients."
+    //   ]
+    // }
   ];
 
   return (

@@ -13,12 +13,13 @@ const Contact = () => {
 
   const handleGitHubClick = () => {
     // In a real implementation, this would open GitHub profile
-    alert('GitHub profile would open here');
+    //target _blank
+    window.location.href = 'https://github.com/batuhansyl25', '_blank';
   };
 
   const handleLinkedInClick = () => {
     // In a real implementation, this would open LinkedIn profile
-    alert('LinkedIn profile would open here');
+    window.location.href = 'https://www.linkedin.com/in/batuhansoylu/', '_blank';
   };
 
   return (
@@ -64,11 +65,11 @@ const Contact = () => {
             <button className="btn btn-primary" onClick={handleEmailClick}>
               Send Email
             </button>
-            <button className="btn btn-secondary" onClick={handleGitHubClick}>
-              GitHub
+            <button className="btn btn-secondary" >
+              <a href="https://github.com/batuhansyl25" target="_blank" rel="noopener noreferrer">GitHub</a>
             </button>
-            <button className="btn btn-secondary" onClick={handleLinkedInClick}>
-              LinkedIn
+            <button className="btn btn-secondary" >
+              <a href="https://www.linkedin.com/in/batuhansoylu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </button>
           </motion.div>
         </motion.div>
