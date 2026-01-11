@@ -1,0 +1,147 @@
+.experience {
+  padding: var(--space-32) var(--space-8);
+  background: var(--color-bg);
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.experience-subtitle {
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-4);
+}
+
+.timeline {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: var(--space-12);
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-accent),
+    var(--color-accent),
+    transparent
+  );
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: var(--space-16);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: calc(-1 * var(--space-12) - 6px);
+  top: var(--space-6);
+  width: 14px;
+  height: 14px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--color-accent-glow);
+  z-index: 2;
+}
+
+.timeline-content {
+  padding: var(--space-8);
+  border-radius: var(--border-radius-xl);
+  width: 100%;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.timeline-company {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin: 0;
+}
+
+.timeline-period {
+  padding: var(--space-2) var(--space-4);
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--color-accent);
+  border-radius: var(--border-radius);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.timeline-role {
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  font-weight: 600;
+}
+
+.timeline-responsibilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.timeline-responsibilities li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.timeline-responsibilities li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    padding: var(--space-24) var(--space-4);
+  }
+
+  .timeline {
+    padding-left: var(--space-8);
+  }
+
+  .timeline-dot {
+    left: calc(-1 * var(--space-8) - 6px);
+  }
+
+  .timeline-company {
+    font-size: var(--text-2xl);
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+}

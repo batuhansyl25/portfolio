@@ -1,0 +1,345 @@
+.tech-showcase {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+  padding: 4rem 2rem;
+}
+
+/* Grid Background */
+.grid-background {
+  position: absolute;
+  inset: 0;
+  perspective: 1000px;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.tech-showcase.visible .grid-background {
+  opacity: 1;
+}
+
+.grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: rotateX(60deg) scale(2);
+  transform-origin: center center;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: rotateX(60deg) scale(2) translateY(0);
+  }
+  100% {
+    transform: rotateX(60deg) scale(2) translateY(50px);
+  }
+}
+
+.grid-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(37, 99, 235, 0.05) 0%,
+    transparent 70%
+  );
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(37, 99, 235, 0.6);
+  border-radius: 50%;
+  left: var(--x);
+  top: var(--y);
+  animation: float 8s ease-in-out infinite;
+  animation-delay: var(--delay);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+  opacity: 0;
+}
+
+.tech-showcase.visible .particle {
+  opacity: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.2);
+  }
+  50% {
+    transform: translate(-20px, -60px) scale(0.8);
+  }
+  75% {
+    transform: translate(-40px, -30px) scale(1.1);
+  }
+}
+
+/* Main Content */
+.tech-content {
+  position: relative;
+  z-index: 10;
+  max-width: 100%;
+  width: 100%;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 1s ease-out 0.3s;
+}
+
+.tech-showcase.visible .tech-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Holographic Card */
+.holographic-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 4rem;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.08);
+}
+
+.card-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(37, 99, 235, 0.3) 50%,
+    transparent 70%
+  );
+  border-radius: 24px;
+  animation: borderGlow 3s linear infinite;
+  opacity: 0.4;
+}
+
+@keyframes borderGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+/* Typography */
+.tech-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #1d4ed8 50%,
+    #3b82f6 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.tech-subtitle {
+  font-size: 1.25rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tech Stats */
+.tech-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.stat-item {
+  padding: 1.5rem;
+  background: rgba(37, 99, 235, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.4);
+  transform: translateY(-5px);
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Gradient Orbs */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: orbFloat 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.1) 0%, transparent 70%);
+  top: 50%;
+  right: 30%;
+  animation-delay: 10s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(50px, 50px);
+  }
+  66% {
+    transform: translate(-30px, 30px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tech-showcase {
+    padding: 3rem 1.5rem;
+    min-height: 80vh;
+  }
+
+  .holographic-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .tech-title {
+    font-size: 2.5rem;
+  }
+
+  .tech-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .tech-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .gradient-orb {
+    filter: blur(60px);
+  }
+
+  .orb-1, .orb-2, .orb-3 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .grid-lines {
+    background-size: 30px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-title {
+    font-size: 2rem;
+  }
+
+  .tech-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .holographic-card {
+    padding: 2rem 1.25rem;
+  }
+}
