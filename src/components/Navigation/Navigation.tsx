@@ -59,7 +59,7 @@ export function Navigation() {
     >
       <div className="nav-content">
         <Link to="/" className="nav-logo">
-          <span className="text-gradient">BS</span>
+          <img src="/logo.png" alt="Batuhan Soylu" className="nav-logo-img" />
         </Link>
 
         <ul className="nav-links">

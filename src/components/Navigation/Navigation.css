@@ -29,6 +29,24 @@
   font-size: var(--text-2xl);
   font-weight: 900;
   letter-spacing: -0.05em;
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-base);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: all var(--transition-base);
+}
+
+.navigation.scrolled .nav-logo-img {
+  height: 32px;
 }
 
 .nav-links {
@@ -79,6 +97,14 @@
 
   .nav-logo {
     font-size: var(--text-xl);
+  }
+
+  .nav-logo-img {
+    height: 32px;
+  }
+
+  .navigation.scrolled .nav-logo-img {
+    height: 28px;
   }
 }
 
