@@ -90,6 +90,10 @@
 }
 
 @media (max-width: 768px) {
+  .error-boundary {
+    padding: var(--space-4);
+  }
+
   .error-content {
     padding: var(--space-12);
   }
@@ -109,5 +113,32 @@
 
   .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-boundary {
+    padding: var(--space-3);
+  }
+
+  .error-content {
+    padding: var(--space-8);
+  }
+
+  .error-icon {
+    font-size: 4rem;
+  }
+
+  .error-title {
+    font-size: var(--text-2xl);
+  }
+
+  .error-message {
+    font-size: var(--text-base);
+  }
+
+  .btn {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-base);
   }
 }
