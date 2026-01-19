@@ -20,7 +20,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: import.meta.env.PROD ? '/portfolio' : '/',
+});
 
 export function Router() {
   return <RouterProvider router={router} />;
