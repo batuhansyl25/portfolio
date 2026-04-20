@@ -1,0 +1,117 @@
+.privacy-policy-page {
+  min-height: 100vh;
+  padding-top: 80px; /* Account for navbar if any */
+  padding-bottom: 4rem;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.privacy-hero {
+  padding: 4rem 10%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.privacy-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+}
+
+.privacy-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.privacy-date {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.privacy-content {
+  padding: 0 10%;
+}
+
+.privacy-text-block {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.privacy-text-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.privacy-text-block h2:first-child {
+  margin-top: 0;
+}
+
+.privacy-text-block p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.privacy-text-block ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.privacy-text-block li {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-text-block strong {
+  color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .privacy-hero {
+    padding: 3rem 5%;
+  }
+
+  .privacy-content {
+    padding: 0 5%;
+  }
+
+  .privacy-text-block {
+    padding: 2rem;
+  }
+
+  .privacy-title {
+    font-size: 2rem;
+  }
+}
